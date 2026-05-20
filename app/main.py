@@ -22,11 +22,18 @@ def get_users():
 
     cursor = conn.cursor(dictionary=True)
 
-    cursor.execute("SELECT id, name FROM users")
+    cursor.execute("SELECT id, name, email FROM users")
 
     users = cursor.fetchall()
 
     cursor.close()
     conn.close()
 
-    return users
+    return [
+    {
+        "id": user["id"],
+        "name": user["name"],
+        "email": user["email"]
+    }
+    for user in users
+]
