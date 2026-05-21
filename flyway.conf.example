@@ -1,0 +1,6 @@
+# Local database connection
+flyway.url=jdbc:mysql://localhost:3306/userservice?allowPublicKeyRetrieval=true&useSSL=false
+flyway.user=appuser
+flyway.password=apppassword
+
+flyway.locations=filesystem:./migrations
