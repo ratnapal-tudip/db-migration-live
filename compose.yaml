@@ -20,8 +20,8 @@ services:
   app-blue:
     build:
       context: ./app
-    image: user-service-app:${APP_VERSION_BLUE}
-    container_name: user-service-app-blue
+    image: db-migration-live-app:${APP_VERSION_BLUE}
+    container_name: db-migration-live-app-blue
     restart: always
     depends_on:
       mysql:
@@ -37,8 +37,8 @@ services:
   app-green:
     build:
       context: ./app
-    image: user-service-app:${APP_VERSION_GREEN}
-    container_name: user-service-app-green
+    image: db-migration-live-app:${APP_VERSION_GREEN}
+    container_name: db-migration-live-app-green
     restart: unless-stopped
     depends_on:
       mysql:
